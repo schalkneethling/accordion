@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'icons';
+    src: url('fonts/icons.eot?#iefix') format('embedded-opentype'),
+         url('fonts/icons.woff') format('woff'),
+         url('fonts/icons.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+.accordion {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.accordion h3 {
+    color: white;
+    margin: 0;
+}
+.accordion a {
+    background-color: #333;
+    display: block;
+    color: white;
+    padding: .5rem;
+    border: 1px solid #333;
+    text-decoration: none;
+}
+.accordion a:focus,
+.accordion a:active {
+    background-color: #edecec;
+    color: black;
+    border: 1px solid #333;
+    outline: none;
+}
+.accordion p {
+    margin: 0;
+    padding: .5rem;
+}
+.accordion .content-pane {
+    background-color: #e0e0e0;
+    color: black;
+    border: 1px solid #333;
+    border-top: 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: .5s;
+}
+.accordion .show {
+    /* @see http://jsfiddle.net/leaverou/zwvNY/
+     * Do not go to crazy with the height of max-height. Try
+     * intead to keep it as small as possible without content
+     * being clipped.
+     */
+    max-height: 300px;
+    opacity: 1;
+}
+.accordion [data-icon]:before {
+    float: right;
+    font-family: 'icons';
+    content: attr(data-icon);
+    transform: rotate(90deg);
+    /* @see http://css-tricks.com/examples/IconFont/ */
+    speak: none;
+}
+.accordion [aria-expanded="true"] [data-icon]:before {
+    -moz-transform: rotate(0);
+    transform: rotate(0);
+}

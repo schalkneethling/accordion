@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accordion</title>
+    <link rel="stylesheet" href="css/accordion.css" type="text/css" media="screen" />
+</head>
+<body>
+    <ul class="accordion" role="tablist" aria-multiselectable="true">
+        <li>
+            <h3 id="heading1-heading" class="heading" role="tab" aria-expanded="true" aria-selected="true">
+                <a href="#heading1">
+                    <span aria-hidden="true" data-icon="&#xe800"></span>Heading 1
+                </a>
+            </h3>
+            <div id="heading1" class="content-pane show" role="tabpanel" aria-labelledby="heading1-heading" tabindex="-1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </li>
+        <li>
+            <h3 id="heading2-heading" class="heading" role="tab">
+                <a href="#heading2">
+                    <span aria-hidden="true" data-icon="&#xe800"></span>Heading 2
+                </a>
+            </h3>
+            <div id="heading2" class="content-pane" role="tabpanel" aria-labelledby="heading2-heading" aria-hidden="true" tabindex="-1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </li>
+        <li>
+            <h3 id="heading3-heading" class="heading" role="tab">
+                <a href="#heading3">
+                    <span aria-hidden="true" data-icon="&#xe800"></span>Heading 3
+                </a>
+            </h3>
+            <div id="heading3" class="content-pane" role="tabpanel" aria-labelledby="heading3-heading" aria-hidden="true" tabindex="-1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </li>
+    </ul>
+    <script src="js/accordion.js"></script>
+</body>
+</html>
