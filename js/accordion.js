@@ -111,15 +111,24 @@
             this.container = accordionContainer;
 
             this.container.addEventListener('click', function(event) {
-                accordion.handleEvent(event);
+                // handle edge cases where the original event.targer is removed
+                // riht after the event was trigered causing event.target.parentNode
+                // in handleEvent to be null.
+                if(event.target.parentNode) {
+                    accordion.handleEvent(event);
+                }
             }, false);
 
             this.container.addEventListener('keyup', function(event) {
-                accordion.delegateKeyEvents(event);
+                if(event.target.parentNode) {
+                    accordion.delegateKeyEvents(event);
+                }
             });
 
             this.container.addEventListener('keydown', function(event) {
-                accordion.delegateKeyEvents(event);
+                if(event.target.parentNode) {
+                    accordion.delegateKeyEvents(event);
+                }
             });
         }
     };
