@@ -42,13 +42,22 @@
          */
         handleEvent: function(event) {
             var anchor = event.target;
+            var contentPanelId = anchor.getAttribute('href');
+
             var parent = event.target.parentNode;
             var parentRole = parent.getAttribute('role');
+            var parentExpandedState = parent.getAttribute('aria-expanded');
 
             // only handle event if the parent has a role of tab.
-            if (parentRole === 'tab') {
-                var contentPanelId = anchor.getAttribute('href');
+            // if the tab is currently expanded, collapse it
+            if (parentRole === 'tab' && parentExpandedState === 'true') {
+                // set the clicked tab as collapsed and not selected.
+                parent.setAttribute('aria-expanded', 'false');
+                parent.setAttribute('aria-selected', 'false');
 
+                // hide all the panes
+                this.hidePanes(this.container.querySelectorAll('.content-pane'));
+            } else if (parentRole === 'tab') {
                 // set the newly selected tab as expanded and selected.
                 parent.setAttribute('aria-expanded', 'true');
                 parent.setAttribute('aria-selected', 'true');
