@@ -51,6 +51,8 @@
             // only handle event if the parent has a role of tab.
             // if the tab is currently expanded, collapse it
             if (parentRole === 'tab' && parentExpandedState === 'true') {
+                event.preventDefault();
+
                 // set the clicked tab as collapsed and not selected.
                 parent.setAttribute('aria-expanded', 'false');
                 parent.setAttribute('aria-selected', 'false');
@@ -58,6 +60,8 @@
                 // hide all the panes
                 this.hidePanes(this.container.querySelectorAll('.content-pane'));
             } else if (parentRole === 'tab') {
+                event.preventDefault();
+
                 // set the newly selected tab as expanded and selected.
                 parent.setAttribute('aria-expanded', 'true');
                 parent.setAttribute('aria-selected', 'true');
@@ -107,7 +111,6 @@
             this.container = accordionContainer;
 
             this.container.addEventListener('click', function(event) {
-                event.preventDefault();
                 accordion.handleEvent(event);
             }, false);
 
